@@ -34,7 +34,7 @@
   <!-- ios -->
   <platform name="ios">
 
-    <config-file target="config.xml" parent="/*">
+    <config-file target="app/src/main/res/xml/config.xml" parent="/*">
       <feature name="SocialSharing">
         <param name="ios-package" value="SocialSharing"/>
         <param name="onload" value="true" />
@@ -63,7 +63,7 @@
   <!-- android -->
   <platform name="android">
 
-    <config-file target="res/xml/config.xml" parent="/*">
+    <config-file target="app/src/main/res/xml/config.xml" parent="/*">
       <feature name="SocialSharing">
         <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
       </feature>
@@ -71,7 +71,7 @@
 
 
 
-    <config-file target="AndroidManifest.xml" parent="/*/application">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/*/application">
       <receiver android:name="nl.xservices.plugins.ShareChooserPendingIntent" android:enabled="true">
         <intent-filter>
           <action android:name="android.intent.action.SEND"/>
@@ -79,11 +79,11 @@
       </receiver>
     </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="/*">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
       <provider android:authorities="${applicationId}.sharing.provider" android:exported="false" android:grantUriPermissions="true" android:name="nl.xservices.plugins.FileProvider">
         <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/sharing_paths" />
       </provider>
